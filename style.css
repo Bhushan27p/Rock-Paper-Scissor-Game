@@ -1,37 +1,89 @@
-/* Hover effect for .choice */
+* {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+h1 {
+  height: 5rem;
+  background: #081b31;
+  color: white;
+  line-height: 5rem;
+}
+
 .choice {
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background 0.3s ease; /* Smooth transition */
+  height: 165px;
+  width: 165px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease; /* Smooth transition for hover effect */
+  z-index: 1; /* Ensure it appears above other elements */
 }
 
 .choice:hover {
-    background: black;
-    cursor: pointer;
+  background: black;
+  cursor: pointer;
 }
 
-/* Mobile hover fix - Ensure touch devices can register the hover effect */
+img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  gap: 3rem;
+}
+
+.score-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  font-size: 2rem;
+  margin-top: 3rem;
+}
+
+#user-score, #computer-score {
+  font-size: 4rem;
+}
+
+#msg {
+  background: #081b31;
+  color: white;
+  font-size: 2rem;
+  display: inline-block;
+  margin-top: 5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+/* Mobile adjustments */
 @media (max-width: 768px) {
-    .choice {
-        height: 70px;
-        width: 70px;
-    }
-    .choice:hover {
-        background: black; /* Keeps hover active on mobile */
-    }
+  .choice {
+    height: 120px;
+    width: 120px;
+  }
+
+  .choice:hover {
+    background: black;
+  }
 }
 
-/* Small mobile screens */
 @media (max-width: 480px) {
-    .choice {
-        height: 60px;
-        width: 60px;
-    }
-    .choice:hover {
-        background: black; /* Keeps hover active on mobile */
-    }
+  .choice {
+    height: 100px;
+    width: 100px;
+  }
+
+  .choice:hover {
+    background: black;
+  }
 }
