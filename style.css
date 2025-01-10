@@ -1,59 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+h1 {
+  height: 5rem;
+  background: #081b31;
+  color: white;
+  line-height: 5rem;
+}
+.choice {
+  height: 165px;
+  width: 165px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  gap: 3rem;
+}
+.choice:hover {
+  background: black;
+  cursor: pointer;
+}
+.score-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  font-size: 2rem;
+  margin-top: 3rem;
+}
+#user-score,
+#computer-score {
+  font-size: 4rem;
+}
+#msg {
+  background: #081b31;
+  color: white;
+  font-size: 2rem;
+  display: inline-block;
+  margin-top: 5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
 
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .choices {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .choice {
+    height: 120px;
+    width: 120px;
+  }
+  img {
+    height: 100px;
+    width: 100px;
+  }
+  .score-board {
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+  }
+  #user-score,
+  #computer-score {
+    font-size: 3rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    height: auto;
+    line-height: normal;
+    padding: 1rem;
+  }
+  #msg {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+  }
+}
 
-
-*{
-  padding:0;
-  margin:0;
-  text-align:center;
-}
-h1{
-  height:5rem;
-  background:#081b31;
-  color:white;
-  line-height:5rem;
-}
-.choice{
-  height:165px;
-  width:165px;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-img{
-  height:150px;
-  width:150px;
-  object-fit:cover;
-  border-radius:50%;
-}
-.choices{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-top:5rem;
-  gap:3rem;
-}
-.choice:hover{
-  background:black;
-  cursor:pointer;
-}
-.score-board{
-  display:flex;
-  justify-content:center;
-  align-itmes:center;
-  gap:3rem;
-  font-size:2rem;
-  margin-top:3rem;
-}
-#user-score,#computer-score{
-  font-size:4rem;
-}
-#msg{
-  background:#081b31;
-  color:white;
-  font-size:2rem;
-  display:inline-block;
-  margin-top:5rem;
-  padding:1rem;
-  border-radius:1rem;
+@media screen and (max-width: 480px) {
+  .choices {
+    gap: 1.5rem;
+  }
+  .choice {
+    height: 100px;
+    width: 100px;
+  }
+  img {
+    height: 85px;
+    width: 85px;
+  }
+  .score-board {
+    font-size: 1.2rem;
+  }
+  #user-score,
+  #computer-score {
+    font-size: 2.5rem;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  #msg {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
 }
