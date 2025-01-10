@@ -1,27 +1,4 @@
-/* General Styles */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    width: 100%; /* Ensures that the body width doesn't exceed viewport width */
-}
-
-/* Header Styles */
-h1 {
-    height: 4rem;
-    background: #081b31;
-    color: white;
-    line-height: 4rem;
-    font-size: 1.6rem;
-}
-
-/* Choice Circle Styles */
+/* Hover effect for .choice */
 .choice {
     height: 80px;
     width: 80px;
@@ -29,79 +6,32 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background 0.3s ease; /* Smooth transition */
 }
 
-/* Image Styles */
-img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-/* Choices Container Styles */
-.choices {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
-    gap: 1rem;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    padding: 0 5px; /* Add padding to prevent overflow */
-}
-
-/* Choice Hover Effect */
 .choice:hover {
     background: black;
     cursor: pointer;
 }
 
-/* Scoreboard Styles */
-.score-board {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    flex-wrap: wrap; /* Ensures it wraps on smaller screens */
-}
-
-#user-score, #computer-score {
-    font-size: 2.5rem;
-}
-
-/* Message Styles */
-#msg {
-    background: #081b31;
-    color: white;
-    font-size: 1.6rem;
-    display: inline-block;
-    margin-top: 3rem;
-    padding: 0.8rem;
-    border-radius: 1rem;
-}
-
-/* Responsive Styles for Tablet and Below */
+/* Mobile hover fix - Ensure touch devices can register the hover effect */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 1.4rem;
-    }
-
     .choice {
         height: 70px;
         width: 70px;
     }
-
-    img {
-        height: 100%;
-        width: 100%;
+    .choice:hover {
+        background: black; /* Keeps hover active on mobile */
     }
+}
 
-    .score-board {
-        flex-direction: column;
-        gap: 1rem;
-        font-size: 1.3rem;
+/* Small mobile screens */
+@media (max-width: 480px) {
+    .choice {
+        height: 60px;
+        width: 60px;
     }
-
-    #user-score, #c
+    .choice:hover {
+        background: black; /* Keeps hover active on mobile */
+    }
+}
