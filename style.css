@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   text-align: center;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -9,17 +10,18 @@ h1 {
   background: #081b31;
   color: white;
   line-height: 5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* flexible font size */
 }
 
 .choice {
-  height: 165px;
-  width: 165px;
+  width: clamp(80px, 20vw, 165px);
+  height: clamp(80px, 20vw, 165px);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background 0.3s ease; /* Smooth transition for hover effect */
-  z-index: 1; /* Ensure it appears above other elements */
+  transition: background 0.3s ease;
+  z-index: 1;
 }
 
 .choice:hover {
@@ -28,62 +30,54 @@ h1 {
 }
 
 img {
-  height: 150px;
-  width: 150px;
+  width: 90%;
+  height: 90%;
   object-fit: cover;
   border-radius: 50%;
 }
 
 .choices {
   display: flex;
+  flex-wrap: wrap; /* wrap on small screens */
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .score-board {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
-  font-size: 2rem;
+  gap: 2rem;
+  font-size: clamp(1.2rem, 3vw, 2rem);
   margin-top: 3rem;
 }
 
 #user-score, #computer-score {
-  font-size: 4rem;
+  font-size: clamp(2rem, 6vw, 4rem);
 }
 
 #msg {
   background: #081b31;
   color: white;
-  font-size: 2rem;
+  font-size: clamp(1rem, 4vw, 2rem);
   display: inline-block;
-  margin-top: 5rem;
+  margin-top: 3rem;
   padding: 1rem;
   border-radius: 1rem;
 }
 
 /* Mobile adjustments */
-@media (max-width: 768px) {
-  .choice {
-    height: 120px;
-    width: 120px;
+@media (max-width: 600px) {
+  .choices {
+    gap: 1.5rem;
+    margin-top: 3rem;
   }
 
-  .choice:hover {
-    background: black;
-  }
-}
-
-@media (max-width: 480px) {
-  .choice {
-    height: 100px;
-    width: 100px;
-  }
-
-  .choice:hover {
-    background: black;
+  h1 {
+    height: auto;
+    line-height: normal;
+    padding: 1rem;
   }
 }
